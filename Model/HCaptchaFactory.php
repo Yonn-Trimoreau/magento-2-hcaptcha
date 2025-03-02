@@ -8,8 +8,8 @@ namespace Grasch\HCaptcha\Model;
 
 use Grasch\HCaptcha\Model\RequestMethod\Post;
 use Magento\Framework\ObjectManagerInterface;
-use ReCaptcha\ReCaptcha;
-use ReCaptcha\ReCaptchaFactory;
+use Magento\ReCaptchaValidation\Model\ReCaptcha;
+use Magento\ReCaptchaValidation\Model\ReCaptchaFactory;
 
 class HCaptchaFactory extends ReCaptchaFactory
 {
@@ -42,7 +42,7 @@ class HCaptchaFactory extends ReCaptchaFactory
     public function __construct(
         ObjectManagerInterface $objectManager,
         Post $post,
-        $instanceName = '\\ReCaptcha\\ReCaptcha'
+        $instanceName = '\\Magento\\ReCaptchaValidation\\Model\\ReCaptcha'
     ) {
         $this->_objectManager = $objectManager;
         $this->_instanceName = $instanceName;
